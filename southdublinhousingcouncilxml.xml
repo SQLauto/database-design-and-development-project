@@ -1,0 +1,329 @@
+<?xml version="1.0" ?> 
+<!-- 
+ Data for XPath, XQuery, and XSLT demos 
+ 
+ QUERY 1
+ doc("south_dublin_housing_council_repairsQ.xml") /south_dublin_housing_council_repairs/tenants/tenant/FIRST_NAME;
+ 
+ 
+ QUERY 2
+ doc("south_dublin_housing_council_repairsQ.xml")/south_dublin_housing_council_repairs/ tenants/tenant/(FIRST_NAME|LAST_NAME);
+ 
+ QUERY 3
+ doc("south_dublin_housing_council_repairsQ.xml")/south_dublin_housing_council_repairs/*/LAST_NAME ;
+ 
+ QUERY 4
+ doc("south_dublin_housing_council_repairsQ.xml")/south_dublin_housing_council_repairs/repairs/*/repair;
+ 
+ QUERY 5
+  doc("south_dublin_housing_council_repairsQ.xml")south_dublin_housing_council_repairs/equipment/tool[@VALUE < 20.00];
+ 
+ 
+ QUERY 6
+  doc("south_dublin_housing_council_repairsQ.xml")/south_dublin_housing_council_repairs/equipment/tool[@VALUE >20.00];
+ 
+ QUERY 7
+ 
+  doc("south_dublin_housing_council_repairsQ.xml")/south_dublin_housing_council_repairs/property[DUBLIN 4]/ADDRESS;
+  
+  QUERY 8
+  doc("south_dublin_housing_council_repairsQ.xml")/south_dublin_housing_council_repairs/equipment[@VALUE < 20.00 AND STATE_OF_REPAIR ="Excellent"]/tool;
+  
+  QUERY 9
+  
+  doc("south_dublin_housing_council_repairsQ.xml")/south_dublin_housing_council_repairs/tradesmen[SKILL ="Carpenter" and FIRST_NAME = "Larry"]/tradesman;
+  
+  QUERY 10
+  
+  doc("south_dublin_housing_council_repairsQ.xml")/south_dublin_housing_council_repairs/equipment[TYPE="saw"]/tool;
+ 
+ 
+ 
+  --> 
+<!DOCTYPE south_dublin_housing_council_repairs[
+                                               <!ELEMENT south_dublin_housing_council_repairs((tenants, properties, repairs, tradesmen, equipment)+)>
+											            <!ELEMENT tenants (tenant)>
+											                    <!ELEMENT tenant (TENANT_ID, REGISTER_NUMBER, FIRST_NAME, LAST_NAME, CONTACT, EMAIL)>
+											                                <!ELEMENT TENANT_ID (#PCDATA)>
+											                                <!ELEMENT REGISTER_NUMBER (#PCDATA)>
+											                                <!ELEMENT FIRST_NAME (#PCDATA)>
+											                                <!ELEMENT LAST_NAME (#PCDATA)>
+											                                <!ELEMENT CONTACT (#PCDATA)>
+											                                <!ELEMENT EMAIL (#PCDATA)>
+											   
+											            <!ELEMENT properties (property)>
+											                    <!ELEMENT property (POSTCODE, TENANT_ID, ADDRESS, REPAIR_ID)>
+																            <!ELEMENT POSTCODE (#PCDATA)>
+																			<!ELEMENT TENANT_ID (#PCDATA)>
+																			<!ELEMENT ADDRESS (#PCDATA)>
+																			<!ELEMENT REPAIR_ID (#PCDATA)>
+																			
+											            <!ELEMENT repairs (repair)>
+											                    <!ELEMENT repair (REPAIR_ID, TYPE, URGENCY, DETAILS, DATE, TIME, TRADESMAN_ID)>
+																            <!ELEMENT REPAIR_ID (#PCDATA)>
+																			<!ELEMENT TYPE (#PCDATA)>
+																			<!ELEMENT URGENCY (#PCDATA)>
+																			<!ELEMENT DETAILS (#PCDATA)>
+																			<!ELEMENT DATE (#PCDATA)>
+																			<!ELEMENT TIME (#PCDATA)>
+																			<!ELEMENT TRADESMAN_ID (#PCDATA)>
+											            <!ELEMENT tradesmen (tradesman)>
+											                    <!ELEMENT tradesman (TRADESMAN_ID, FIRST_NAME, LAST_NAME, SKILL, CONTACT,EQUIPMENT_ID)>
+																            <!ELEMENT TRADESMAN_ID (#PCDATA)>
+																            <!ELEMENT FIRST_NAME (#PCDATA)>
+																            <!ELEMENT LAST_NAME (#PCDATA)>
+																            <!ELEMENT SKILL (#PCDATA)>
+																            <!ELEMENT CONTACT (#PCDATA)>
+																            <!ELEMENT EQUIPMENT_ID (#PCDATA)>
+																            
+											            <!ELEMENT equipment (tool)>
+											                    <!ELEMENT tool (EQUIPMENT_ID, TYPE, DESCRIPTION, VALUE, INSPECTION_DATE, STATE_OF_REPAIR)>
+																            <!ELEMENT EQUIPMENT_ID (#PCDATA)>
+																			<!ELEMENT TYPE (#PCDATA)>
+																			<!ELEMENT DESCRIPTION (#PCDATA)>
+																			<!ELEMENT VALUE (#PCDATA)>
+																			<!ELEMENT INSPECTION_DATE (#PCDATA)>
+																			<!ELEMENT STATE_OF_REPAIR (#PCDATA)>
+]>
+
+<south_dublin_housing_council_repairs>
+
+                                    <tenants>
+									
+									         <tenant>
+											        <TENANT_ID>10</TENANT_ID>
+													<REGISTER_NUMBER>9959595</REGISTER_NUMBER>
+													<FIRST_NAME>Lawrence</FIRST_NAME>
+													<LAST_NAME>Mullen</LAST_NAME>
+													<CONTACT>0879375639</CONTACT>
+													<EMAIL>arcobat@eircom.ie</EMAIL>
+											</tenant>
+											
+											<tenant>
+											        <TENANT_ID>5</TENANT_ID>
+													<REGISTER_NUMBER>42893</REGISTER_NUMBER>
+													<FIRST_NAME>Tom</FIRST_NAME>
+													<LAST_NAME>O Gara</LAST_NAME>
+													<CONTACT>08767672841</CONTACT>
+													<EMAIL>soundman@hotmail.com</EMAIL>																				         
+											</tenant>
+											
+											<tenant>
+											        <TENANT_ID>16</TENANT_ID>
+													<REGISTER_NUMBER>2796314</REGISTER_NUMBER>
+													<FIRST_NAME>Imelda</FIRST_NAME>
+													<LAST_NAME>May</LAST_NAME>
+													<CONTACT>08735635473</CONTACT>
+													<EMAIL>lovetattoo@eircom.ie</EMAIL>																				         
+											</tenant>
+											
+											<tenant>
+											        <TENANT_ID>21</TENANT_ID>
+													<REGISTER_NUMBER>8936569</REGISTER_NUMBER>
+													<FIRST_NAME>Nadine</FIRST_NAME>
+													<LAST_NAME>Burke</LAST_NAME>
+													<CONTACT>085456846589</CONTACT>
+													<EMAIL>bioshock2004@gmail.com</EMAIL>																				         
+											</tenant>
+											
+											<tenant>
+											        <TENANT_ID>12</TENANT_ID>
+													<REGISTER_NUMBER>214748364</REGISTER_NUMBER>
+													<FIRST_NAME>Mary</FIRST_NAME>
+													<LAST_NAME>Murray</LAST_NAME>
+													<CONTACT>0895487325</CONTACT>
+													<EMAIL>murray1975@gmail.com</EMAIL>																				         
+											</tenant>
+											
+																	
+											
+									</tenants>
+									
+									<properties>
+									            <property>
+												         <POSTCODE>A97 NX65</POSTCODE>
+												         <TENANT_ID>10</TENANT_ID>
+														 <ADDRESS>Elsinore, 15 Colimore Road, Dalkey, County Dublin</ADDRESS>
+														 <REPAIR_ID>10</REPAIR_ID>														 
+												</property>
+												
+												<property>
+												         <POSTCODE>D04 KN85</POSTCODE>
+												         <TENANT_ID>5</TENANT_ID>
+														 <ADDRESS>54 Sandymount Avenue, Dublin 4</ADDRESS>
+														 <REPAIR_ID>3</REPAIR_ID>														 
+												</property>
+												
+												<property>
+												         <POSTCODE>D04 N824</POSTCODE>
+												         <TENANT_ID>16</TENANT_ID>
+														 <ADDRESS>The South Dock, 18 Bridge Street, Dublin 4 </ADDRESS>
+														 <REPAIR_ID>7</REPAIR_ID>														 
+												</property>
+												
+												<property>
+												         <POSTCODE>D24 WN33</POSTCODE>
+												         <TENANT_ID>21</TENANT_ID>
+														 <ADDRESS>32 Maplewood Close Dublin 24 </ADDRESS>
+														 <REPAIR_ID>8</REPAIR_ID>														 
+												</property>
+												
+												<property>
+												         <POSTCODE>D12 A2B9</POSTCODE>
+												         <TENANT_ID>12</TENANT_ID>
+														 <ADDRESS>75 Rutland Grove, Dublin 12 </ADDRESS>
+														 <REPAIR_ID>6</REPAIR_ID>														 
+												</property>
+									</properties>
+									
+									<repairs>
+									         <repair>
+											         <REPAIR_ID>10</REPAIR_ID>
+													 <TYPE>Tiling</TYPE>
+													 <URGENCY>Routine</URGENCY>
+													 <DETAILS>putting tiles on the kitchen floor</DETAILS>
+													 <DATE>2016-03-01</DATE>
+													 <TIME>13.00</TIME>
+													 <TRADESMAN_ID>2</TRADESMAN_ID>
+											 </repair>
+											 
+											 <repair>
+											         <REPAIR_ID>3</REPAIR_ID>
+													 <TYPE>Plastering</TYPE>
+													 <URGENCY>Cyclical</URGENCY>
+													 <DETAILS>Repairs to internal walls</DETAILS>
+													 <DATE>2015-02-01</DATE>
+													 <TIME>11.00</TIME>
+													 <TRADESMAN_ID>5</TRADESMAN_ID>
+											 </repair>
+											 
+											 <repair>
+											         <REPAIR_ID>7</REPAIR_ID>
+													 <TYPE>Painting</TYPE>
+													 <URGENCY>Cyclical</URGENCY>
+													 <DETAILS>Painting of the outside wall of house</DETAILS>
+													 <DATE>2016-10-15</DATE>
+													 <TIME>10.00</TIME>
+													 <TRADESMAN_ID>8</TRADESMAN_ID>
+											 </repair>
+											 
+											 <repair>
+											         <REPAIR_ID>8</REPAIR_ID>
+													 <TYPE>Carpentry</TYPE>
+													 <URGENCY>Cyclical</URGENCY>
+													 <DETAILS>Construction of wooden fence in front garden</DETAILS>
+													 <DATE>2016-06-05</DATE>
+													 <TIME>10.30</TIME>
+													 <TRADESMAN_ID>9</TRADESMAN_ID>
+											 </repair>
+											 
+											 <repair>
+											         <REPAIR_ID>6</REPAIR_ID>
+													 <TYPE>Woodwork</TYPE>
+													 <URGENCY>Cyclical</URGENCY>
+													 <DETAILS>Replace damp skirting board</DETAILS>
+													 <DATE>2015-12-14</DATE>
+													 <TIME>11.00</TIME>
+													 <TRADESMAN_ID>7</TRADESMAN_ID>
+											 </repair>
+									</repairs>
+									
+									<tradesmen>
+									        <tradesman>
+											        <TRADESMAN_ID>2</TRADESMAN_ID>
+													<FIRST_NAME>Ray</FIRST_NAME>
+													<LAST_NAME>Dunphy</LAST_NAME>
+													<SKILL>Tiler<SKILL>
+													<CONTACT>0852878541</CONTACT>
+													<EQUIPMENT_ID>3</EQUIPMENT_ID>													
+											</tradesman>
+											
+											<tradesman>
+											        <TRADESMAN_ID>5</TRADESMAN_ID>
+													<FIRST_NAME>Henry</FIRST_NAME>
+													<LAST_NAME>Dunne</LAST_NAME>
+													<SKILL>Plasterer<SKILL>
+													<CONTACT>0877362952</CONTACT>
+													<EQUIPMENT_ID>2</EQUIPMENT_ID>													
+											</tradesman>
+											
+											<tradesman>
+											        <TRADESMAN_ID>8</TRADESMAN_ID>
+													<FIRST_NAME>Gregory</FIRST_NAME>
+													<LAST_NAME>Issaacs</LAST_NAME>
+													<SKILL>Painter<SKILL>
+													<CONTACT>0878954217</CONTACT>
+													<EQUIPMENT_ID>6</EQUIPMENT_ID>													
+											</tradesman>
+											
+											<tradesman>
+											        <TRADESMAN_ID>9</TRADESMAN_ID>
+													<FIRST_NAME>Larry</FIRST_NAME>
+													<LAST_NAME>Quinn</LAST_NAME>
+													<SKILL>Carpenter<SKILL>
+													<CONTACT>085842846</CONTACT>
+													<EQUIPMENT_ID>15</EQUIPMENT_ID>													
+											</tradesman>
+											
+											<tradesman>
+											        <TRADESMAN_ID>7</TRADESMAN_ID>
+													<FIRST_NAME>Stephen</FIRST_NAME>
+													<LAST_NAME>Holt</LAST_NAME>
+													<SKILL>Carpenter<SKILL>
+													<CONTACT>0898362534</CONTACT>
+													<EQUIPMENT_ID>14</EQUIPMENT_ID>													
+											</tradesman>
+									</tradesmen>
+									
+									<equipment>
+									            <tool>
+											         <EQUIPMENT_ID>3</EQUIPMENT_ID>
+													 <TYPE>Angle Grinder</TYPE>
+													 <DESCRIPTION>Makita GA4530KD 720W</DESCRIPTION>
+													 <VALUE>52.00</VALUE>
+													 <INSPECTION_DATE>2015-10-12</INSPECTION_DATE>
+													 <STATE_OF_REPAIR>Poor</STATE_OF_REPAIR>	 
+													 
+												</tool>
+												
+												<tool>
+											         <EQUIPMENT_ID>2</EQUIPMENT_ID>
+													 <TYPE>Adjustable wrench</TYPE>
+													 <DESCRIPTION>Stanley 300mm MaxSteel</DESCRIPTION>
+													 <VALUE>14.00</VALUE>
+													 <INSPECTION_DATE>2015-10-08</INSPECTION_DATE>
+													 <STATE_OF_REPAIR>Excellent</STATE_OF_REPAIR>	 
+													 
+												</tool>
+												
+												<tool>
+											         <EQUIPMENT_ID>6</EQUIPMENT_ID>
+													 <TYPE>Paint Brush and roll</TYPE>
+													 <DESCRIPTION>Stanley 8 piece decorating set</DESCRIPTION>
+													 <VALUE>25.95</VALUE>
+													 <INSPECTION_DATE>2015-12-14</INSPECTION_DATE>
+													 <STATE_OF_REPAIR>Excellent</STATE_OF_REPAIR>	 
+													 
+												</tool>
+												
+												<tool>
+											         <EQUIPMENT_ID>15</EQUIPMENT_ID>
+													 <TYPE>Heavy Duty Electric Saw</TYPE>
+													 <DESCRIPTION>10-1/4" Milwaukee Circular Saw</DESCRIPTION>
+													 <VALUE>30.95</VALUE>
+													 <INSPECTION_DATE>2015-12-05</INSPECTION_DATE>
+													 <STATE_OF_REPAIR>Excellent</STATE_OF_REPAIR>	 
+													 
+												</tool>
+												
+												<tool>
+											         <EQUIPMENT_ID>14</EQUIPMENT_ID>
+													 <TYPE>Saw</TYPE>
+													 <DESCRIPTION>Stanley Heavy Duty 30 inch saw</DESCRIPTION>
+													 <VALUE>15.50</VALUE>
+													 <INSPECTION_DATE>2015-11-29</INSPECTION_DATE>
+													 <STATE_OF_REPAIR>Excellent</STATE_OF_REPAIR>	 
+													 
+												</tool>
+									</equipment>
+</south_dublin_housing_council_repairs>
